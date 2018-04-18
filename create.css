@@ -1,3 +1,26 @@
-.body{
-  background-color: rgb(169, 169, 169);
+
+@font-face {
+    font-family: timeless;
+    src: url(fonts/Timeless-Bold.otf) format("opentype");
 }
+
+.login{
+  position: relative;
+  top: 50%
+  right:50%
+}
+
+h5 {
+	font-family: timeless;
+
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
