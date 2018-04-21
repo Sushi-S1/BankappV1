@@ -2,6 +2,14 @@ var attempt = 3;
 var i;
 var usernames = ["john", "billy", 'barry', "admin","magicbags"];
 var passwords = ["1234", "3212", "4554","password","030302"];
+var elem = document.querySelector('.modal');
+var instance = M.Modal.init(elem, options);
+
+$(document).ready(function() {
+    $('#modal1').modal();
+});
+
+
 
 function val() {
 
