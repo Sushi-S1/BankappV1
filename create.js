@@ -1,29 +1,29 @@
 var attempt = 3;
 var i;
-var usernames = ["john", "billy", 'barry', "admin","magicbags"];
-var passwords = ["1234", "3212", "4554","password","030302"];
-var elem = document.querySelector('.modal');
-var instance = M.Modal.init(elem, options);
-
-$(document).ready(function() {
-    $('#modal1').modal();
-});
-
-
+var info = '{"firstname": ["John", "Billy", "barry","admin"], "lastname": ["doe", "bob", "allen", "pass"], "user": ["john", "billy", "barry", "admin"], "pass": ["1234", "3212", "4554", "password"] }';
+//var info = <?php echo json_encode($userInfo)?>;
+var debtj = 0;
+var moneyj = 0;
+var debtb1 = 0;
+var moneyb1 = 0;
+var debtb2 = 0 ;
+var moneyb2 = 0;
 
 function val() {
-
+    var infos = JSON.parse(info);
+    var userdata = infos.user
+    var passdata = infos.pass
     var username = document.getElementById("Username").value;
     var password = document.getElementById("Password").value;
-
-    if (usernames.indexOf(username) != -1 && passwords.indexOf(password) != -1) {
-        if (usernames.indexOf(username) != 3 && passwords.indexOf(password) != 3) {
-
+    var currUser;
+    if (userdata.indexOf(username) != -1 && passdata.indexOf(password) != -1) {
+        if (userdata.indexOf(username) != 3 && passdata.indexOf(password) != 3) {
+        //changeData();
         location.assign("mainPage.html")
-
+        currUser = username;
         }
 
-        else if ((passwords.indexOf(password) == 3) && (passwords.indexOf(password) == 3)){
+        else if ((userdata.indexOf(username) == 3) && (passdata.indexOf(password) == 3)){
 
           location.assign("adminPg.html")
 
@@ -50,6 +50,51 @@ function val() {
     }
 }
 
+function takeLoan(){
+
+}
+
+function depositMoney(){
+
+}
+
+function changeData(){
+
+  if (currUser = "john"){
+    document.getElementById("debt").innerHTML = debtj;
+    document.getElementById("balance").innerHTML = moneyj;
+
+  }
+
+  else if (currUser = "billy"){
+    document.getElementById("debt").innerHTML = debtb1;
+    document.getElementById("balance").innerHTML = moneyb1;
+  }
+
+  else if (currUser = "barry"){
+    document.getElementById("debt").innerHTML = debtb2;
+    document.getElementById("balance").innerHTML = moneyb2;
+  }
+  else {
+    return
+  }
+
+}
+
+function calcIntrest(yr, mon, day, yr2, mon2, day2) {
+
+  var original = 11.3
+  var single = 24*60*60*1000;
+  var loanStart = new Date(yr,mon,day);
+  var LoanEnd = new Date(yr2,mon2,day2);
+  var time = Math.round((Math.abs((loanStart.getTime() - LoanEnd.getTime())/(single)))-(1));
+  var final = (original) + (time * 0.1);
+  final = Math.round(100*final)/100;
+  //console.log(final);
+  document.getElementById("debt").innerHTML = "$" + final;
+}
+
+
 
 function addAccount() {
   location.assign("createAccount.html")
@@ -63,25 +108,29 @@ function validate() {
 function createVal(){
 
   if ((document.getElementById("createUser").value != "") && (document.getElementById("createPass").value != "")){
-
-
+    var infos2 = JSON.parse(info);
     var createUsername = document.getElementById("createUser").value;
     var createPassword = document.getElementById("createPass").value;
-    usernames.push(createUsername);
-    passwords.push(createPassword);
+    infos2.user.push({
+      user: createUsername
+    });
+    infos2.pass.push({
+      pass: createPassword
+    });
+    txt = JSON.stringify(infos2);
+    console.log(info);
     clearCreate();
-    alert("Succsess! New account created!")
-    location.assign("create.html")
-
+    location.assign("index.html")
+    M.toast({html: "Succsess! New account created!"})
 
   }
   else {
-    alert("Please fill out all fields.")
+    M.toast({html: "Please fill out all fields."})
   }
 }
 
 function send(){
-  location.assign("create.html")
+  location.assign("index.html")
 
 }
 
@@ -103,7 +152,7 @@ function lendpg(){
 }
 
 function homepg(){
-  location.replace("create.html")
+  location.replace("index.html")
   validate();
 }
 

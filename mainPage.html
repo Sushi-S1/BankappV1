@@ -21,7 +21,7 @@
           <li><a href="">Home</a></li>
           <li><a href="borrow.html">Borrow</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="create.html">Sign out</a></li>
+        <li><a href="index.html">Sign out</a></li>
         </ul>
       </div>
 
@@ -32,15 +32,15 @@
     <div class="modal-content">
       <h4>Event</h4>
       <div class="input-field">
-        <input id="firstName" type="text" class="validate" v-model="EventName">
+        <input id="firstName" type="text" class="validate" >
         <label for="EventName">First Name</label>
       </div>
       <div class="input-field">
-        <input id="Lastname" type="text" class="validate" v-model="time">
+        <input id="Lastname" type="text" class="validate" >
         <label for="Lastname">Last Name</label>
       </div>
       <div class="input-field">
-        <input id="amount" type="text" class="validate" v-model="loc">
+        <input id="amount" type="text" class="validate" >
         <label for="amount"> Deposit amount</label>
       </div>
 
@@ -57,15 +57,15 @@
     <div class="modal-content">
       <h4>Event</h4>
       <div class="input-field">
-        <input id="firstName" type="text" class="validate" v-model="EventName">
+        <input id="firstName" type="text" class="validate">
         <label for="EventName">First Name</label>
       </div>
       <div class="input-field">
-        <input id="Lastname" type="text" class="validate" v-model="time">
+        <input id="Lastname" type="text" class="validate">
         <label for="Lastname">Last Name</label>
       </div>
       <div class="input-field">
-        <input id="amount" type="text" class="validate" v-model="loc">
+        <input id="amount" type="text" class="validate">
         <label for="amount">Payoff amount</label>
       </div>
 
@@ -96,7 +96,7 @@
   <div class="row">
     <div class="col s12">
       <div class="card-panel white">
-        <span class="card-title">Balance:</span>
+        <h4>Balance:</h4>
         <div class="white-text">
           <p>I am a very simple card. I am good at containing small bits of information.
           I am conv</p>
@@ -104,7 +104,7 @@
             <h1 id="balance">$0.00</h1>
         <h6></h6>
 
-        <a class="waves-effect waves-light btn" data-target="modal1">
+        <a class="waves-effect waves-light btn" data-target="depositModal">
           deposit money
         </a>
 
@@ -118,14 +118,14 @@
   <div class="row">
         <div class="col s12 ">
       <div class="card-panel white">
-        <span class="card-title">Debt:</span>
+        <h4>Debt:</h4>
         <div class="white-text">
           <p>I am a very simple card. I am good at containing small bits of information.
           I am conv</p>
         </div>
           <h1 id="debt">$0.00</h1>
           <h6></h6>
-          <a class="waves-effect waves-light btn" data-target="modal1">
+          <a class="waves-effect waves-light btn" data-target="payDebtmodal">
             Pay off debt
           </a>
 
@@ -133,9 +133,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 <h3></h3>
 
