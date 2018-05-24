@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -6,8 +9,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+
+
   <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
@@ -24,18 +27,75 @@
         <a class="nav-link btn-primary text-white" href="index.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link btn-primary text-white" href="#">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link btn-primary text-white" href="about.html">About <span class="sr-only">(current)</span></a>
       </li>
 
     </ul>
 
-      <button class="btn btn-primary" type="submit">Login</button>
-      <button class="btn btn-primary" type="submit">Sign up</button>
+      <button class="btn btn-primary" type="submit">Sign out</button>
   </div>
 </nav>
 
+<div class="container-fluid">
+  <div class="row">
+<div class="col-sm-3">
+  <br>
+
+  <h1 id="welcome">Welcome, Sushil</h1>
+  <br>
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Personal info:</h5>
+    <h6 class="card-title">Current balence:</h6>
+    <h1 id="currentBAL">$0.00</h1>
+    <h6 class="card-title">Current debt:</h6>
+    <h1 id="currentDEBT">$0.00</h1>
+    <h6 class="card-title">Credit score:</h6>
+    <h1 id="currentCREDIT">738</h1>
+    <a href="#" class="badge badge-info">What's this?</a>
+
+  </div>
+</div>
+<br>
+<button type="button" class="btn btn-primary btn-lg">Take a loan</button>
+<br>
+<br>
+
+<button type="button" class="btn btn-primary btn-lg">Pay back debt</button>
+</div>
+<div class="col-sm-9">
+
+<table id="transHist" class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date loaned:</th>
+      <th scope="col">Date paid:</th>
+      <th scope="col">Lender:</th>
+      <th scope="col">Amount borrowed:</th>
+      <th scope="col">Notes:</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>
+</div>
+
+</div>
+</div>
 
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="fixed-bottom">
 <footer class="page-footer font-small bg-primary text-white pt-4 mt-4">
 
   <div class="container-fluid text-center text-md-left">
@@ -55,11 +115,8 @@
 
   </div>
 
-
-
-
 </footer>
-
+</div>
 </body>
 
 </html>
