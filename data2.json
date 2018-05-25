@@ -3,18 +3,21 @@
 		"Username": [{
 				"Eagle": [{
 					"First": "Eagle",
-					"Last": "Zhu"
+					"Last": "Zhu",
+					"Email" : "eaglez129@gmail.com"
 				}]
 			}, {
 				"Chandan": [{
 					"First": "Chandan",
-					"Last": "Arlikatti"
+					"Last": "Arlikatti",
+					"Email" : "chanda129@gmail.com"
 				}]
 			},
 			{
 				"Pratham": [{
 					"First": "Pratham",
-					"Last": "Patel"
+					"Last": "Patel",
+					"Email" : "pratp129@gmail.com"
 				}]
 			}
 		],
@@ -31,7 +34,7 @@
 		"DatePaid": ["3/26/2018", "4/12/2018", "4/12/2018", "4/20/2018", "4/20/2018", "5/3/2018", "5/3/2018", "5/4/2018", "5/8/2018", "5/9/2018", "5/15/2018", "5/23/2018"],
 		"LoanFrom": ["Tristan", "Tristan", "Tristan", "Tristan", "Tristan", "Tristan", "Tristan", "Tristan", "Tristan", "Tristan", "Tristan", "Tristan"],
 		"LoanAMT": ["$1.25", "1.25", "$2.25", "$1.25", "1.25", "$2.25", "$1.25", "1.25", "$2.25", "$1.25", "1.25", "$2.25"],
-		"Notes": ["Kickstart", "Pepsi", "Chocolate"],
+		"Notes": ["Kickstart", "Pepsi", "Chocolate", "Kickstart", "Pepsi", "Chocolate", "Kickstart", "Pepsi", "Chocolate", "Kickstart", "Pepsi", "Chocolate"],
     "totalDebt" : "0.00",
     "totalBalence": "0.00",
     "totalcred": "0"
