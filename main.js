@@ -5,6 +5,13 @@ function loginOpen(){
 
 }
 
+function paydebtopen(){
+  $("#paydebt").modal();
+}
+
+function getloanopen(){
+  $("#loanmodal").modal();
+}
 
 var config = {
   apiKey: "AIzaSyDtKc57CagQvztRh-c1hGlqqlYcPmk7dC8",
@@ -109,3 +116,6 @@ function val() {
 
     }
 }
+
+
+// trans hist
