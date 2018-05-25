@@ -1,194 +1,155 @@
 <!DOCTYPE html>
-
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+   <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
-
-
-
-  <nav class=" navbar navbar-expand-lg navbar-light bg-primary text-white">
-  <a class="navbar-brand text-white" href="#">TriLending</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link btn-primary text-white" href="#">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link btn-primary text-white" href="about.html">About<span class="sr-only">(current)</span></a>
-      </li>
-
-    </ul>
-
-      <button class="btn btn-primary"  onclick="loginOpen();" id="loginbtn">Login</button>
-      <button class="btn btn-primary" type="submit" onclick="createaccountopen();">Sign up</button>
-  </div>
-</nav>
-
-<div class="jumbotron">
-  <h1 class="display-4">TriLending</h1>
-  <p class="lead">Welcome to the custom BankAPP made for TriLending Services. Now you can take a loan at any time with more ease than ever.</p>
-  <hr class="my-4">
-  <p>TriLending aims to finance the purchases of individuals in need and out of options. We provide a convienient way to make the purchases you want, when you want to make them.</p>
-  <a class="btn btn-primary btn-lg #1976d2 blue darken-2" href="about.html" role="button">Learn more</a>
-</div>
-
-
-<div class="modal modal fade" id="loginmodal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sign in:</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLOGIN();">
-          <span aria-hidden="true">&times;</span>
-        </button>
+   <nav class=" navbar navbar-expand-lg navbar-light bg-primary text-white">
+      <a class="navbar-brand text-white" href="#">TriLending</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+               <a class="nav-link btn-primary text-white" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+               <a class="nav-link btn-primary text-white" href="about.html">About<span class="sr-only">(current)</span></a>
+            </li>
+         </ul>
+         <button class="btn btn-primary"  onclick="loginOpen();" id="loginbtn">Login</button>
+         <button class="btn btn-primary" type="submit" onclick="createaccountopen();">Sign up</button>
       </div>
-      <div class="modal-body">
-        <div class="input-group mb-3">
-
-  <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="username1">
-</div>
-<br>
-<div class="input-group mb-3">
-
-  <input type="text" class="form-control" placeholder="Password" aria-label="Username" id="password">
-</div>
+   </nav>
+   <div class="jumbotron">
+      <h1 class="display-4">TriLending</h1>
+      <p class="lead">Welcome to the custom BankAPP made for TriLending Services. Now you can take a loan at any time with more ease than ever.</p>
+      <hr class="my-4">
+      <p>TriLending aims to finance the purchases of individuals in need and out of options. We provide a convienient way to make the purchases you want, when you want to make them.</p>
+      <a class="btn btn-primary btn-lg #1976d2 blue darken-2" href="about.html" role="button">Learn more</a>
+   </div>
+   <div class="modal modal fade" id="loginmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title">Sign in:</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLOGIN();">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="username1">
+               </div>
+               <br>
+               <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Password" aria-label="Username" id="password">
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button id="login" type="button" class="btn btn-primary" onclick="login();">Login</button>
+            </div>
+         </div>
       </div>
-      <div class="modal-footer">
-        <button id="login" type="button" class="btn btn-primary" onclick="login();">Login</button>
-
+   </div>
+   <div class="modal modal fade" id="createmodal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title">Create a account:</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearCreate();">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="input-group mb-3">
+                  <input id="createnamefirst" type="text" class="form-control" placeholder="First name" >
+               </div>
+               <br>
+               <div class="input-group mb-3">
+                  <input id="createnamelast" type="text" class="form-control" placeholder="Last name" >
+               </div>
+               <br>
+               <br>
+               <div class="input-group mb-3">
+                  <input id="createusername" type="text" class="form-control" placeholder="Username" >
+               </div>
+               <br>
+               <div class="input-group mb-3">
+                  <input id="createpass" type="text" class="form-control" placeholder="Password" >
+               </div>
+               <br>
+               <div class="input-group mb-3">
+                  <input id="createpass2" type="text" class="form-control" placeholder="Re-enter password" >
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button id="createacc" type="button" class="btn btn-primary" onclick="createUSER();">Create account</button>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal modal fade" id="createmodal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Create a account:</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearCreate();">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <div class="input-group mb-3">
-
-  <input id="createnamefirst" type="text" class="form-control" placeholder="First name" >
-</div>
-<br>
-
-<div class="input-group mb-3">
-
-  <input id="createnamelast" type="text" class="form-control" placeholder="Last name" >
-</div>
-<br>
-<br>
-
-<div class="input-group mb-3">
-
-  <input id="createpass" type="text" class="form-control" placeholder="Password" >
-</div>
-<br>
-<div class="input-group mb-3">
-
-  <input id="createpass2" type="text" class="form-control" placeholder="Re-enter password" >
-</div>
-
-    </div>
-      <div class="modal-footer">
-        <button id="createacc" type="button" class="btn btn-primary" onclick="createUSER();">Create account</button>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<video width="320" height="240" controls>
-  <source src="movie.mp4" type="video/mp4">
-</video>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
+   </div>
+   <video width="320" height="240" controls>
+      <source src="movie.mp4" type="video/mp4">
+   </video>
+   <div class="container">
       <div class="row">
-      <div class="card bg-light mb-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-          <h5 class="card-title">Borrow</h5>
-          <p class="card-text">Borrow money for your music videos, Mountain Dew Kickstarts, or a broken 3D printer fan. With our miltitude of times and locations, you can borrow whenever you are in a pinch.</p>
-        </div>
+         <div class="col-sm">
+            <div class="row">
+               <div class="card bg-light mb-3">
+                  <div class="card-header"></div>
+                  <div class="card-body">
+                     <h5 class="card-title">Borrow</h5>
+                     <p class="card-text">Borrow money for your music videos, Mountain Dew Kickstarts, or a broken 3D printer fan. With our miltitude of times and locations, you can borrow whenever you are in a pinch.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm">
+            <div class="row">
+               <div class="card bg-light mb-3">
+                  <div class="card-header"></div>
+                  <div class="card-body">
+                     <h5 class="card-title">Lend</h5>
+                     <p class="card-text">Requesting a loan is now easier than ever with our new SpeedyLoan technology. We keep the process simple, fast and efficient to accomodate your needs.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm">
+            <div class="row">
+               <div class="card bg-light mb-3">
+                  <div class="card-header"></div>
+                  <div class="card-body">
+                     <h5 class="card-title">Track</h5>
+                     <p class="card-text">With our simple and secure recording system, you can alawys see your purchase history and keep track of all loans. Never miss a payment with our Debt Calender.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
+   </div>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <footer class="page-footer font-small bg-primary text-white pt-4 mt-4">
+      <div class="container-fluid text-center text-md-left">
+         <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+               <h6>© 2018 BankAPP</h6>
+            </div>
+         </div>
       </div>
-    </div>
-    <div class="col-sm">
-      <div class="row">
-      <div class="card bg-light mb-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-          <h5 class="card-title">Lend</h5>
-          <p class="card-text">Requesting a loan is now easier than ever with our new SpeedyLoan technology. We keep the process simple, fast and efficient to accomodate your needs.</p>
-        </div>
-      </div>
-      </div>
-    </div>
-    <div class="col-sm">
-      <div class="row">
-      <div class="card bg-light mb-3">
-        <div class="card-header"></div>
-        <div class="card-body">
-          <h5 class="card-title">Track</h5>
-          <p class="card-text">With our simple and secure recording system, you can alawys see your purchase history and keep track of all loans. Never miss a payment with our Debt Calender.</p>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<footer class="page-footer font-small bg-primary text-white pt-4 mt-4">
-
-  <div class="container-fluid text-center text-md-left">
-
-    <div class="row">
-
-      <div class="col-md-6 mt-md-0 mt-3">
-
-        <h6>© 2018 BankAPP</h6>
-
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-
-
-
-</footer>
-
+   </footer>
 </body>
-
 </html>
