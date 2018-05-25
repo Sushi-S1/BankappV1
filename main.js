@@ -35,6 +35,8 @@ function createaccountopen(){
 function clearCreate(){
   document.getElementById("createnamefirst").value = "";
   document.getElementById("createnamelast").value = "";
+  document.getElementById("createnameusername").value = "";
+  document.getElementById("createemail").value = "";
   document.getElementById("createpass").value = "";
   document.getElementById("createpass2").value = "";
 }
