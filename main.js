@@ -1,3 +1,8 @@
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+
+
 function loginOpen(){
 
 
@@ -72,6 +77,7 @@ database.ref().once(user, function(snapshot){
     }
 });
 };*/
+
 function clearLogin(){
   document.getElementById("username1").value = "";
   document.getElementById("password").value = "";
