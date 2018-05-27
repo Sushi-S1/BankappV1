@@ -46,25 +46,13 @@
     </div>
 
 <div class="col-md-6">
-    <div class="alert alert-success alert-dismissible collapse pull-right" id="sucsessfully">
+    <div class="alert alert-success alert-dismissible collapse float-right" id="sucsessfully">
       <a href="#" class="close">&times;</a>
       <strong>Success!</strong> Your account was sucsessfully created! Please log in to get started.
     </div>
 </div>
 
-<div class="col-md-6-col-md-offset-6">
-    <div class="alert alert-danger alert-dismissible collapse" id="rip">
-      <a href="#" class="close">&times;</a>
-      <strong>Oh no!</strong> Your passwords do not match!
-    </div>
-</div>
 
-<div class="col-md-6-col-md-offset-6">
-    <div class="alert alert-warning alert-dismissible collapse" id="rip2">
-      <a href="#" class="close">&times;</a>
-      Please fill out all the fields.
-    </div>
-</div>
 
     <div class="modal modal fade" id="loginmodal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -84,6 +72,7 @@
                         <input type="password" class="form-control" placeholder="Password" aria-label="Username" id="password">
                     </div>
                 </div>
+                <h6 class="text-danger" id="wrongpass"></h6>
                 <div class="modal-footer">
                     <button id="login" type="button" class="btn btn-primary" onclick="login();">Login</button>
                 </div>
@@ -133,8 +122,10 @@
                     <div class="input-group mb-3">
                         <input type="password" id="createpass2" class="form-control" placeholder="Re-enter password">
                     </div>
-
+                    <h6 class="text-danger" id="passdontmatch"></h6>
+                    <h6 class="text-danger" id="fillout"></h6>
                 </div>
+
                 <div class="modal-footer">
                     <button id="createacc" type="button" class="btn btn-primary" onclick="SignUp();">Create account</button>
                 </div>

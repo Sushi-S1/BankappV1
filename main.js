@@ -53,19 +53,32 @@ function clearCreate() {
 }
 
 function createUSER(first, last, username, email, password) {
-    firebase.database().ref('USERINFO/' + first + '/').set({
+
+
+
+
+
+
+    firebase.database().ref('UserINFO' ).update({
+        EMail: email,
         First: first,
         Last: last,
         Username: username,
-        Email: email,
         Password: password
     });
-
-    firebase.database().ref('USERDATA/' + first + '/').set({
-        CurrentDebt: 0,
-        CurrentCredit: 0,
-        CreditScore: 0
+    firebase.database().ref('USERDATA' ).update({
+        CreditScore: "0.00",
+        CurrentCredit: "0.00",
+        CurrentDebt: "0.00"
     });
+    firebase.database().ref('USERHIST' ).update({
+      DateLoaned: [],
+      DatePaid: [],
+      LoanFrom: [],
+      LoanAMT: [],
+      Notes: []
+    });
+
 
 
 }
@@ -137,16 +150,17 @@ function SignUp() {
     var password = document.getElementById("createpass").value;
     var password2 = document.getElementById("createpass2").value;
     if(first == "" || last == "" || username == "" || email == "" || password == ""){
-    $("rip2").show();
+    document.getElementById("fillout").innerHTML =  "Please fill out all the fields."
     }
     else if (password != password2) {
-        $("rip").show();
+        document.getElementById("passdontmatch").innerHTML =  "Passwords don't match!"
     } else {
-        createUSER(first, last, username, email, password);
+      createUSER(first, last, username, email, password);
         $("#sucsessfully").show();
         clearCreate();
-
         $('#createmodal').modal('hide');
+        loginOpen();
+        //$("#TOS").modal();
     }
 }
 
