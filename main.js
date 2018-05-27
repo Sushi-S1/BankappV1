@@ -1,75 +1,80 @@
 var config = {
-  apiKey: "AIzaSyDtKc57CagQvztRh-c1hGlqqlYcPmk7dC8",
-  authDomain: "bankapp-a2e08.firebaseapp.com",
-  databaseURL: "https://bankapp-a2e08.firebaseio.com",
-  projectId: "bankapp-a2e08",
-  storageBucket: "bankapp-a2e08.appspot.com",
-  messagingSenderId: "794692122802"
+    apiKey: "AIzaSyDtKc57CagQvztRh-c1hGlqqlYcPmk7dC8",
+    authDomain: "bankapp-a2e08.firebaseapp.com",
+    databaseURL: "https://bankapp-a2e08.firebaseio.com",
+    projectId: "bankapp-a2e08",
+    storageBucket: "bankapp-a2e08.appspot.com",
+    messagingSenderId: "794692122802"
 };
 firebase.initializeApp(config);
 
-$(function ()
-{
-  $('[data-toggle="popover"]').popover()
+$(function() {
+    $('[data-toggle="popover"]').popover();
 })
 
-function validatedropdown()
-{
+function validatedropdown() {
 
 }
-function signout()
-{
-  window.location.assign("index.html")
-}
-function loginOpen()
-{
-  $("#loginmodal").modal();
+
+function signout() {
+    window.location.assign("index.html");
 }
 
-function paydebtopen()
-{
-  $("#paydebt").modal();
+function loginOpen() {
+    $("#loginmodal").modal();
 }
 
-function getloanopen()
-{
-  $("#loanmodal").modal();
+function paydebtopen() {
+    $("#paydebt").modal();
 }
 
-function clearLOGIN()
-{
-  document.getElementById("username1").value = "";
-  document.getElementById("password").value = "";
+function getloanopen() {
+    $("#loanmodal").modal();
 }
 
-function createaccountopen()
-{
-  $("#createmodal").modal('toggle');
+function clearLOGIN() {
+    document.getElementById("username1").value = "";
+    document.getElementById("password").value = "";
 }
 
-function clearCreate()
-{
-  document.getElementById("createnamefirst").value = "";
-  document.getElementById("createnamelast").value = "";
-  document.getElementById("createusername").value = "";
-  document.getElementById("createemail").value = "";
-  document.getElementById("createpass").value = "";
-  document.getElementById("createpass2").value = "";
+function createaccountopen() {
+    $("#createmodal").modal('toggle');
 }
 
-function createUSER(first, last, username, email, password)
-{
-    firebase.database().ref('UserINFO/' + first + '/').set({
-      First: first,
-      Last: last,
-      Username: username,
-      Email: email,
-      Password: password
+function clearCreate() {
+    document.getElementById("createnamefirst").value = "";
+    document.getElementById("createnamelast").value = "";
+    document.getElementById("createusername").value = "";
+    document.getElementById("createemail").value = "";
+    document.getElementById("createpass").value = "";
+    document.getElementById("createpass2").value = "";
+}
+
+function createUSER(first, last, username, email, password) {
+    firebase.database().ref('USERINFO/' + first + '/').set({
+        First: first,
+        Last: last,
+        Username: username,
+        Email: email,
+        Password: password
+    });
+
+    firebase.database().ref('USERDATA/' + first + '/').set({
+        CurrentDebt: 0,
+        CurrentCredit: 0,
+        CreditScore: 0
+    });
+
+    firebase.database().ref('USERHIST/' + first + '/').set({
+        DateLoaned: ["00/00/0000"],
+        DatePaid: ["00/00/0000"],
+        LoanFrom: ["None"],
+        LoanAMT: ["$00.00"],
+        Notes: ["None"]
     });
 }
 
-function SignUp()
-{
+function SignUp() {
     var first = document.getElementById("createnamefirst").value;
     var last = document.getElementById("createnamelast").value;
     var username = document.getElementById("createusername").value;
@@ -77,12 +82,9 @@ function SignUp()
     var password = document.getElementById("createpass").value;
     var password2 = document.getElementById("createpass2").value;
 
-    if(password != password2)
-    {
+    if (password != password2) {
         console.log("Error: Passwords do not match")
-    }
-    else
-    {
+    } else {
         createUSER(first, last, username, email, password);
         console.log("Created user " + username)
         clearCreate();
@@ -91,8 +93,7 @@ function SignUp()
     }
 }
 
-function changeData(param)
-{
+function changeData() {
     var user = "Chandan";
     var database = firebase.database();
 
@@ -114,7 +115,7 @@ function changeData(param)
             document.getElementById("currentCREDIT").innerHTML = user.totalcred;
 
     });
-    };
+};
 
 function clearLogin()
 {

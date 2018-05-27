@@ -1,5 +1,5 @@
 {
-"UserINFO": {
+"USERINFO": {
 	"Eagle": {
 		"First": "Eagle",
 		"Last": "Zhu",
@@ -33,15 +33,15 @@
 		"Notes": ["Kickstart", "Pepsi", "Chocolate", "Kickstart", "Pepsi", "Chocolate", "Kickstart", "Pepsi", "Chocolate", "Kickstart", "Pepsi", "Chocolate"]
 		},
 	"Chandan": {
-		"DateLoaned": ["10/12/18", "10/13/18", "11/13/18"],
-		"DatePaid": ["10/13/18", "10/14/18", "11/14/18"],
+		"DateLoaned": ["10/12/202018", "10/13/2018", "11/13/2018"],
+		"DatePaid": ["10/13/2018", "10/14/2018", "11/14/2018"],
 		"LoanFrom": ["Tristan", "Tristan", "Tristan"],
 		"LoanAMT": ["$1.25", "1.25", "$2.25"],
 		"Notes": ["Kickstart", "Pepsi", "Chocolate"]
 		},
 	"Pratham": {
-		"DateLoaned": ["10/12/18", "10/13/18", "11/13/18"],
-		"DatePaid": ["10/13/18", "10/14/18", "11/14/18"],
+		"DateLoaned": ["10/12/2018", "10/13/2018", "11/13/2018"],
+		"DatePaid": ["10/13/2018", "10/14/2018", "11/14/2018"],
 		"LoanFrom": ["Tristan", "Tristan", "Tristan"],
 		"LoanAMT": ["$1.25", "1.25", "$2.25"],
 		"Notes": ["Kickstart", "Pepsi", "Chocolate"]
