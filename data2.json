@@ -58,19 +58,19 @@
 },
 "USERDATA": {
 	"01": [{
-    	"totalDebt" : "0.00",
-    	"totalBalence": "0.00",
-    	"totalcred": "0"
+    	"CurrentDebt" : "0.00",
+    	"CurrentCredit": "0.00",
+    	"CreditScore": "0"
 		}],
 	"02": [{
-		"totalDebt": "0.00",
-		"totalBalence": "0.00",
-		"totalcred": "0"
+		"CurrentDebt": "0.00",
+		"CurrentCredit": "0.00",
+		"CreditScore": "0"
 		}],
 	"03": [{
-		"totalDebt": "0.00",
-		"totalBalence": "0.00",
-		"totalcred": "0"
+		"CurrentDebt": "0.00",
+		"CurrentCredit": "0.00",
+		"CreditScore": "0"
 		}]
 
 
