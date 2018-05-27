@@ -1,34 +1,4 @@
 {
-	"UserInfo": {
-		"Username": [{
-				"Eagle": [{
-					"First": "Eagle",
-					"Last": "Zhu",
-					"Email" : "eaglez129@gmail.com"
-				}]
-			}, {
-				"Chandan": [{
-					"First": "Chandan",
-					"Last": "Arlikatti",
-					"Email" : "chand4ara@gmail.com"
-				}]
-			},
-			{
-				"Pratham": [{
-					"First": "Pratham",
-					"Last": "Patel",
-					"Email" : "proshizzle2002@gmail.com"
-				}]
-			}
-		],
-		"Password": [{
-			"Eagle": "xyz",
-			"Chandan": "1234",
-			"Pratham": "54321"
-		}]
-	}
-
-	,
 	"Eagle": {
 		"DateLoaned": ["3/23/18", "3/26/2018", "3/28/2018", "4/16/2018", "4/18/2018", "4/27/2018", "5/3/2018", "5/4/2018", "5/7/2018", "5/9/2018", "5/14/2018", "5/21/2018"],
 		"DatePaid": ["3/26/2018", "4/12/2018", "4/12/2018", "4/20/2018", "4/20/2018", "5/3/2018", "5/3/2018", "5/4/2018", "5/8/2018", "5/9/2018", "5/15/2018", "5/23/2018"],
@@ -39,7 +9,7 @@
     "totalBalence": "0.00",
     "totalcred": "0"
 	},
-	
+
 	"Chandan": {
 		"DateLoaned": ["10/12/18", "10/13/18", "11/13/18"],
 		"DatePaid": ["10/13/18", "10/14/18", "11/14/18"],
@@ -60,8 +30,54 @@
 		"totalDebt": "0.00",
 		"totalBalence": "0.00",
 		"totalcred": "0"
+	},
+
+	"Users": {
+		"01": [{
+			"First": "Eagle",
+			"Last": "Zhu",
+			"Username": "eaglez129",
+			"EMail": "eaglez129@gmail.com",
+			"Password": "xyz"
+			}],
+		"02": [{
+			"First": "Chandan",
+			"Last": "Aralikatti",
+			"Username": "chanduniverse",
+			"EMail": "chand4ara@gmail.com",
+			"Password": "1234"
+			}],
+		"03": [{
+			"First": "Pratham",
+			"Last": "Patel",
+			"Username": "proshizzle",
+			"EMail": "proshizzle2002@gmail.com",
+			"Password": "545321"
+			}],
+		"04": [{
+			"First": "",
+			"Last": "",
+			"Username": "",
+			"EMail": "",
+			"Password": ""
+			}]
+		},
+
+	"Data": {
+		"<TRANSACTION_ID>": [{
+			"LoanFrom": "<TRISTAN>",
+			"LoanTo": "<USER>",
+			"DateLoaned": "<DATE>",
+			"DateDue": "<DATE>",
+			"Location": "<LOCATION>",
+			"Amount": "<AMOUNT>",
+			"Notes": "<NOTES>"
+
+			}]
+		}
 	}
 
+	}
 
 
 
