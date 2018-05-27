@@ -1,5 +1,5 @@
 {
-	"UserINFO": {
+	"UserInfo": {
 		"Username": [{
 				"Eagle": [{
 					"First": "Eagle",
@@ -10,14 +10,14 @@
 				"Chandan": [{
 					"First": "Chandan",
 					"Last": "Arlikatti",
-					"Email" : "chanda129@gmail.com"
+					"Email" : "chand4ara@gmail.com"
 				}]
 			},
 			{
 				"Pratham": [{
 					"First": "Pratham",
 					"Last": "Patel",
-					"Email" : "pratp129@gmail.com"
+					"Email" : "proshizzle2002@gmail.com"
 				}]
 			}
 		],
@@ -39,6 +39,7 @@
     "totalBalence": "0.00",
     "totalcred": "0"
 	},
+	
 	"Chandan": {
 		"DateLoaned": ["10/12/18", "10/13/18", "11/13/18"],
 		"DatePaid": ["10/13/18", "10/14/18", "11/14/18"],

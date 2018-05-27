@@ -2,12 +2,7 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 
-function validatedropdown(){
 
-}
-function signout(){
-  window.location.assign("index.html")
-}
 function loginOpen(){
 
 
@@ -25,7 +20,7 @@ function getloanopen(){
 
 var config = {
   apiKey: "AIzaSyDtKc57CagQvztRh-c1hGlqqlYcPmk7dC8",
-  authDomain: "bankapp-a2e08.firebaseapp.com",
+  authDomain: "bankapp-a2e08.firebaseapp.com", // We need to change this to a GitHub sites website once it is deployed
   databaseURL: "https://bankapp-a2e08.firebaseio.com",
   projectId: "bankapp-a2e08",
   storageBucket: "bankapp-a2e08.appspot.com",
@@ -40,7 +35,7 @@ function createaccountopen(){
 function clearCreate(){
   document.getElementById("createnamefirst").value = "";
   document.getElementById("createnamelast").value = "";
-  document.getElementById("createusername").value = "";
+  document.getElementById("createnameusername").value = "";
   document.getElementById("createemail").value = "";
   document.getElementById("createpass").value = "";
   document.getElementById("createpass2").value = "";
@@ -57,10 +52,10 @@ function createUSER(){
 
 
 function changeData(param){
-var user = "chandan";
+var user = param;
 
-var database = firebase.database();
-database.ref().once('child_added', function(snapshot){
+/*var database = firebase.database();
+database.ref().once(user, function(snapshot){
     if(snapshot.exists()){
         var content = "";
 
@@ -68,13 +63,13 @@ database.ref().once('child_added', function(snapshot){
           var i = 0;
             var val = data.val();
             content +="<tr>";
-         //content += "<th scope="row">" + 0 + "</th>";
-            content += "<td>" + Chandan.DateLoaned[0] + "</td>";
-            content += "<td>" + Chandan.Paid+ "</td>";
-            content += "<td>" + Chandan.DatePaid + "</td>";
-            content += "<td>" + Chandan.LoanAMT+ "</td>";
-            content += "<td>" + Chandan.LoanFrom + "</td>";
-            content += "<td>" + Chandan.Notes + "</td>";
+  //          content += "<th scope="row">" + i + "</th>";
+            content += "<td>" + user.DateLoaned[0] + "</td>";
+            content += "<td>" + user.Paid+ "</td>";
+            content += "<td>" + user.DatePaid + "</td>";
+            content += "<td>" + user.LoanAMT+ "</td>";
+            content += "<td>" + user.LoanFrom + "</td>";
+            content += "<td>" + user.Notes + "</td>";
             content += "</tr>";
         });
         $("transHist > tbody").append(content);
@@ -83,12 +78,12 @@ database.ref().once('child_added', function(snapshot){
         document.getElementById("currentCREDIT").innerHTML = user.totalcred;
     }
 });
-};
+};*/
 
 function clearLogin(){
   document.getElementById("username1").value = "";
   document.getElementById("password").value = "";
-
+}
 
 
 }
