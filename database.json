@@ -1,34 +1,28 @@
-
-
-
-
 {
 "UserINFO": {
 	"Eagle": {
 		"First": "Eagle",
 		"Last": "Zhu",
 		"Username": "eaglez129",
-		"EMail": "eaglez129@gmail.com",
+		"Email": "eaglez129@gmail.com",
 		"Password": "xyz"
 		},
 	"Chandan": {
 		"First": "Chandan",
 		"Last": "Aralikatti",
 		"Username": "chanduniverse",
-		"EMail": "chand4ara@gmail.com",
+		"Email": "chand4ara@gmail.com",
 		"Password": "1234"
 		},
 	"Pratham": {
 		"First": "Pratham",
 		"Last": "Patel",
 		"Username": "proshizzle",
-		"EMail": "proshizzle2002@gmail.com",
+		"Email": "proshizzle2002@gmail.com",
 		"Password": "545321"
 		}
 
 	},
-
-
 
 "USERHIST": {
 	"Eagle": {
@@ -52,10 +46,8 @@
 		"LoanAMT": ["$1.25", "1.25", "$2.25"],
 		"Notes": ["Kickstart", "Pepsi", "Chocolate"]
 		}
+	},
 
-
-
-},
 "USERDATA": {
 	"Eagle": {
 		"CurrentDebt" : "0.00",
@@ -72,18 +64,6 @@
     	"CurrentCredit": "0.00",
     	"CreditScore": "0"
 		}
-
-
-
-}
-
-
-
-
-
-
-
-
-
+	}
 
 }
