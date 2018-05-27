@@ -1,3 +1,13 @@
+var config = {
+  apiKey: "AIzaSyDtKc57CagQvztRh-c1hGlqqlYcPmk7dC8",
+  authDomain: "bankapp-a2e08.firebaseapp.com",
+  databaseURL: "https://bankapp-a2e08.firebaseio.com",
+  projectId: "bankapp-a2e08",
+  storageBucket: "bankapp-a2e08.appspot.com",
+  messagingSenderId: "794692122802"
+};
+firebase.initializeApp(config);
+
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
@@ -23,15 +33,6 @@ function getloanopen(){
   $("#loanmodal").modal();
 }
 
-var config = {
-  apiKey: "AIzaSyDtKc57CagQvztRh-c1hGlqqlYcPmk7dC8",
-  authDomain: "bankapp-a2e08.firebaseapp.com",
-  databaseURL: "https://bankapp-a2e08.firebaseio.com",
-  projectId: "bankapp-a2e08",
-  storageBucket: "bankapp-a2e08.appspot.com",
-  messagingSenderId: "794692122802"
-};
-firebase.initializeApp(config);
 
 function createaccountopen(){
   $("#createmodal").modal();
@@ -57,31 +58,27 @@ function createUSER(){
 
 
 function changeData(param){
-var user = "chandan";
+
+var user = "Chandan";
 
 var database = firebase.database();
 database.ref().once('child_added', function(snapshot){
-    if(snapshot.exists()){
-        var content = "";
 
-        snapshot.forEach(function(data){
-          var i = 0;
-            var val = data.val();
+            var content;
             content +="<tr>";
-         //content += "<th scope="row">" + 0 + "</th>";
-            content += "<td>" + Chandan.DateLoaned[0] + "</td>";
-            content += "<td>" + Chandan.Paid+ "</td>";
-            content += "<td>" + Chandan.DatePaid + "</td>";
-            content += "<td>" + Chandan.LoanAMT+ "</td>";
-            content += "<td>" + Chandan.LoanFrom + "</td>";
-            content += "<td>" + Chandan.Notes + "</td>";
+            content += "<td>" + user.DateLoaned[0] + "</td>";
+            content += "<td>" + user.Paid+ "</td>";
+            content += "<td>" + user.DatePaid + "</td>";
+            content += "<td>" + user.LoanAMT+ "</td>";
+            content += "<td>" + user.LoanFrom + "</td>";
+            content += "<td>" + user.Notes + "</td>";
             content += "</tr>";
-        });
-        $("transHist > tbody").append(content);
+
+        $("#bodytable").append(content);
         document.getElementById("currentBAL").innerHTML = user.totalDebt;
         document.getElementById("currentDEBT").innerHTML = user.totalBalence;
         document.getElementById("currentCREDIT").innerHTML = user.totalcred;
-    }
+
 });
 };
 
@@ -129,6 +126,3 @@ function val() {
 
     }
 }
-
-
-// trans hist
