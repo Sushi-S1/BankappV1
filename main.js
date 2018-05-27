@@ -58,8 +58,12 @@ function createUSER(){
 
 
 function changeData(param){
+var user = param;
+var refrence = firebase.database().ref().child("USERHIST/" + user);
+rootRef.on("child_added", snap => {
+var                         });
 
-var user = "Chandan";
+/*var user = "Chandan";
 
 var database = firebase.database();
 database.ref().once('child_added', function(snapshot){
@@ -79,7 +83,7 @@ database.ref().once('child_added', function(snapshot){
         document.getElementById("currentDEBT").innerHTML = user.totalBalence;
         document.getElementById("currentCREDIT").innerHTML = user.totalcred;
 
-});
+});*/
 };
 
 function clearLogin(){
