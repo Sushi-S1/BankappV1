@@ -7,7 +7,6 @@ var config = {
   messagingSenderId: "794692122802"
 };
 firebase.initializeApp(config);
-
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
@@ -58,11 +57,35 @@ function createUSER(){
 
 
 function changeData(param){
-var user = param;
-var refrence = firebase.database().ref().child("USERHIST/" + user);
-rootRef.on("child_added", snap => {
-var                         });
 
+var user = "Eagle";
+var refrence = firebase.database().ref().child("USERDATA/" + user);
+refrence.on("child_added", snap => {
+  var credscore =  snap.child("CreditScore");
+  var currcred =  snap.child("CurrentCredit");
+  var currdebt =  snap.child("CurrentDebt");
+
+document.getElementById("currentCREDIT").innerHTML =   credscore;
+document.getElementById("currentBAL").innerHTML = "$" + currcred;
+document.getElementById("currentDEBT").innerHTML = "$" + currdebt;
+
+
+ });
+/*
+ var refrence2 = firebase.database().ref().child("USERHIST/" + user);
+ refrence2.on("child_added", snap => {
+   var dateLoan =  snap.child("CreditScore");
+   var datePay =  snap.child("CurrentCredit");
+   var lender =  snap.child("CurrentDebt");
+ $("#currentCREDIT").append(credscore);
+ $("#currentBAL").append(currcred);
+ $("#currentDEBT").append(currdebt);
+ document.getElementById("currentCREDIT").innerHTML =   credscore;
+ document.getElementById("currentBAL").innerHTML = "$" + currcred;
+ document.getElementById("currentDEBT").innerHTML = "$" + currdebt;
+
+
+});*/
 /*var user = "Chandan";
 
 var database = firebase.database();

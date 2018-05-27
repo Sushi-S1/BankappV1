@@ -58,12 +58,12 @@
 },
 "USERDATA": {
 	"Eagle": {
-		"CurrentDebt" : "0.00",
-    	"CurrentCredit": "0.00",
-    	"CreditScore": "0"
+		"CurrentDebt" : "5.00",
+    	"CurrentCredit": "14.00",
+    	"CreditScore": "54"
 		},
 	"Chandan": {
-		"CurrentDebt" : "0.00",
+		"CurrentDebt" : "5.00",
     	"CurrentCredit": "0.00",
     	"CreditScore": "0"
 		},
