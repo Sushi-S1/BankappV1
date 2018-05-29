@@ -63,20 +63,17 @@ function clearCreate() {
 }
 
 function createUSER(first, last, username, email, password) {
-<<<<<<< HEAD
-    firebase.database().ref('UserINFO/' + first ).update({
-        EMail: email,
-=======
 
-    firebase.database().ref('USERINFO/' + first).set({
+
+    firebase.database().ref('USERINFO/' + first).update({
         Email: email,
->>>>>>> 36581cd89626d3c26c7e84c961eb6132714acb66
+
         First: first,
         Last: last,
         Username: username,
         Password: password
     });
-<<<<<<< HEAD
+
     firebase.database().ref('USERDATA/' + first ).update({
 
         CreditScore: "0.00",
@@ -85,15 +82,6 @@ function createUSER(first, last, username, email, password) {
 
   });
   firebase.database().ref('USERHIST/' + first ).update({
-=======
-    firebase.database().ref('USERDATA/' + first).set({
-        CreditScore: "0.00",
-        CurrentCredit: "0.00",
-        CurrentDebt: "0.00"
-    });
-}
->>>>>>> 36581cd89626d3c26c7e84c961eb6132714acb66
-
     DateLoaned: [""],
      DatePaid: [""],
      LoanFrom: [""],
@@ -101,6 +89,9 @@ function createUSER(first, last, username, email, password) {
      Notes: [""]
 
 });
+
+
+
 
 
 
