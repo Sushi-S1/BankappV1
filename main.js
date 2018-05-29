@@ -98,19 +98,34 @@ function createUSER(first, last, username, email, password) {
 };
 function changeData(param){
 
-    var user = "Eagle";
-    var refrence = firebase.database().ref().child("USERDATA/" + user + "/");
+    var user = param;
+    var refrencecred = firebase.database().ref().child("USERDATA/" + user + "/CreditScore/");
 
-    refrence.on("child_added", snap => {
-        var credscore =  snap.child("CreditScore");
-        var currcred =  snap.child("CurrentCredit");
-        var currdebt =  snap.child("CurrentDebt");
+    refrencecred.on("value", snap => {
 
-        document.getElementById("currentCREDIT").innerHTML =   credscore;
-        console.log(credscore);
-        document.getElementById("currentBAL").innerHTML = "$" + currcred;
-        document.getElementById("currentDEBT").innerHTML = "$" + currdebt;
+        document.getElementById("currentCREDIT").innerHTML =   snap.val();
+
     });
+
+    var refrencedebt = firebase.database().ref().child("USERDATA/" + user + "/CurrentDebt/");
+
+    refrencedebt.on("value", snap => {
+
+
+        document.getElementById("currentDEBT").innerHTML = "$" + snap.val();
+    });
+
+
+    var refrencecredit = firebase.database().ref().child("USERDATA/" + user + "/CurrentCredit/");
+
+    refrencecredit.on("value", snap => {
+
+
+
+        document.getElementById("currentBAL").innerHTML = "$" + snap.val();
+
+    });
+
 
     /*
      var refrence2 = firebase.database().ref().child("USERHIST/" + user);
