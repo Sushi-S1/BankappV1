@@ -76,7 +76,7 @@ function createUSER(first, last, username, email, password) {
 
     firebase.database().ref('USERDATA/' + first ).update({
 
-        CreditScore: "0.00",
+        CreditScore: "0",
         CurrentCredit: "0.00",
         CurrentDebt: "0.00"
 
@@ -107,6 +107,7 @@ function changeData(param){
         var currdebt =  snap.child("CurrentDebt");
 
         document.getElementById("currentCREDIT").innerHTML =   credscore;
+        console.log(credscore);
         document.getElementById("currentBAL").innerHTML = "$" + currcred;
         document.getElementById("currentDEBT").innerHTML = "$" + currdebt;
     });
