@@ -53,37 +53,33 @@ function clearCreate() {
 }
 
 function createUSER(first, last, username, email, password) {
-
-
-
-
-
-
-    firebase.database().ref('UserINFO' ).update({
+    firebase.database().ref('UserINFO/' + first ).update({
         EMail: email,
         First: first,
         Last: last,
         Username: username,
         Password: password
     });
-    firebase.database().ref('USERDATA' ).update({
+    firebase.database().ref('USERDATA/' + first ).update({
+
         CreditScore: "0.00",
         CurrentCredit: "0.00",
         CurrentDebt: "0.00"
-    });
-    firebase.database().ref('USERHIST' ).update({
-      DateLoaned: [],
-      DatePaid: [],
-      LoanFrom: [],
-      LoanAMT: [],
-      Notes: []
-    });
+
+  });
+  firebase.database().ref('USERHIST/' + first ).update({
+
+    DateLoaned: [""],
+     DatePaid: [""],
+     LoanFrom: [""],
+     LoanAMT: [""],
+     Notes: [""]
+
+});
 
 
 
-}
-
-
+};
 function changeData(param){
 
 var user = "Eagle";
