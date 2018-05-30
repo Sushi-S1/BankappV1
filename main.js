@@ -185,33 +185,37 @@ function clearLogin() {
 
 
 function val() {
+  var firename;
+  var firepass;
+
 
     var name = document.getElementById("username1").value;
     var password = document.getElementById("password").value;
-    var firename;
-    var firepass;
 
 
 
-    var refrencename = firebase.database().ref().child("USERDATA/" + name + "/First");
+
+    var refrencename = firebase.database().ref().child("USERINFO/" + name + "/First/");
 
     refrencename.on("value", snap => {
+      firename = snap.val();
 
-        firename = snap.val();
 
     });
 
-    var refrencepass = firebase.database().ref().child("USERDATA/" + name + "/Password");
+    var refrencepass = firebase.database().ref().child("USERINFO/" + name + "/Password/");
 
     refrencepass.on("value", snap => {
 
 
-        firepass = snap.val();
+      firepass = snap.val();
+
+
     });
 
 
 
-    if (((firename && firepass) !== undefined && (firename && firepass) !== null)) {
+  if ((((firename && firepass) !== undefined && (firename && firepass) !== null)) && (name && password) !== "") {
         if ((name == firename && password == firepass)) {
             location.assign("transHist.html")
             changeData(firename);
