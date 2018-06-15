@@ -19,138 +19,162 @@
 </head>
 <body>
 
-  <nav class=" navbar navbar-expand-lg navbar-light bg-primary text-white">
-  <a class="navbar-brand text-white" href="#">TriLending</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <!-- NAV BAR -->
+    <nav class=" navbar navbar-expand-lg navbar-light bg-primary text-white">
+      <a class="navbar-brand text-white" href="index.html">TriLending</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link btn-primary text-white" href="index.html">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link btn-primary text-white" href="#">About<span class="sr-only">(current)</span></a>
-      </li>
-
-    </ul>
-
-    <button class="btn btn-primary" onclick="loginOpen();">Login</button>
-    <button class="btn btn-primary" type="submit" onclick="createaccountopen();">Sign up</button>
-  </div>
-</nav>
-
-<div class="jumbotron">
-  <h1 class="display-4">About</h1>
-  <p class="lead">Easily learn about the inerworkings of TriLending so you can stay informed.</p>
-  <br>
-  <h3>Credit Score</h3>
-  <p class="lead">Using a customly designed algorithm, we calculate a credit score to easily let you know how you are doing. Our algorithm takes into account multiple factors as well as your loan history.</p>
-</div>
-<div class="modal modal fade" id="loginmodal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Sign in:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLOGIN();">
-           <span aria-hidden="true">&times;</span>
-           </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Name" aria-label="Username" id="username1">
-                </div>
-                <br>
-                <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" aria-label="Username" id="password">
-                </div>
-                    <h6 class="text-danger" id="wronglogin"></h6>
-            </div>
-
-            <div class="alert alert-success alert-dismissible collapse float-right" id="sucsessfully">
-                <a href="#" class="close">&times;</a>
-                <strong>Success!</strong> Your account was sucsessfully created! Please log in to get started.
-            </div>
-            <div class="modal-footer">
-                <button id="login" type="button" class="btn btn-primary" onclick="val();">Login</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal modal fade" id="createmodal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Create an account:</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearCreate();">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <input id="createnamefirst" type="text" class="form-control" placeholder="First name">
-                </div>
-
-                <br>
-
-                <div class="input-group mb-3">
-                    <input id="createnamelast" type="text" class="form-control" placeholder="Last name">
-                </div>
-
-                <br>
-
-
-
-                <div class="input-group mb-3">
-                    <input id="createemail" type="text" class="form-control" placeholder="Email Address">
-                </div>
-
-                <br>
-
-                <div class="input-group mb-3">
-                    <input type="password" id="createpass" class="form-control" placeholder="Password">
-                </div>
-
-                <br>
-
-                <div class="input-group mb-3">
-                    <input type="password" id="createpass2" class="form-control" placeholder="Re-enter password">
-                </div>
-                <h6 class="text-danger" id="passdontmatch"></h6>
-                <h6 class="text-danger" id="fillout"></h6>
-            </div>
-
-            <div class="modal-footer">
-                <button id="createacc" type="button" class="btn btn-primary" onclick="SignUp();">Create account</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer class="page-footer font-small bg-primary text-white pt-4 mt-4">
-
-  <div class="container-fluid text-center text-md-left">
-
-    <div class="row">
-
-      <div class="col-md-6 mt-md-0 mt-3">
-
-        <h6>© 2018 BankAPP</h6>
-
-
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link btn-primary text-white" href="index.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link btn-primary text-white" href="#">About<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <button class="btn btn-primary" onclick="loginOpen();">Login</button>
+        <button class="btn btn-primary" type="submit" onclick="createaccountopen();">Sign up</button>
       </div>
+    </nav>
 
-
+    <!-- CONTENTS OF ABOUT PAGE -->
+    <div class="jumbotron">
+      <h1 class="display-4"><strong>About</strong></h1>
+      <p class="lead">Easily learn about the inerworkings of TriLending so you can stay informed.</p>
+    </div>
+    <br>
+    <h3>The Team</h3>
+    <div class="container">
+         <div class="row">
+             <div class="col-sm">
+                 <div class="row">
+                     <div class="card bg-light mb-3">
+                         <div class="card-header">Tristan</div>
+                         <div class="card-body">
+                             <p class="card-text">Tristan is the founder of TriLending and is dedicated to providing the loans people need and works on website development.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-sm">
+                 <div class="row">
+                     <div class="card bg-light mb-3">
+                         <div class="card-header">Sushil</div>
+                         <div class="card-body">
+                             <p class="card-text">Sushil works hard at constantly improving the website to better your user experience and provide you with easy access to the loans you need.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div><!---
+             <div class="col-sm">
+                 <div class="row">
+                     <div class="card bg-light mb-3">
+                         <div class="card-header">Services</div>
+                         <div class="card-body">
+                             <p class="card-text"></p>
+                         </div>
+                     </div>
+            </div>-->
+        </div>
+    </div>
+      <br>
+      <h3>Credit Score</h3>
+      <p class="lead">Using a customly designed algorithm, we calculate a credit score to easily let you know how you are doing. Our algorithm takes into account multiple factors as well as your loan history.</p>
     </div>
 
+    <!-- MODALS -->
+    <div class="modal modal fade" id="loginmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sign in:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearLOGIN();">
+               <span aria-hidden="true">&times;</span>
+               </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Name" aria-label="Username" id="username1">
+                    </div>
+                    <br>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Password" aria-label="Username" id="password">
+                    </div>
+                        <h6 class="text-danger" id="wronglogin"></h6>
+                </div>
 
-  </div>
+                <div class="alert alert-success alert-dismissible collapse float-right" id="sucsessfully">
+                    <a href="#" class="close">&times;</a>
+                    <strong>Success!</strong> Your account was sucsessfully created! Please log in to get started.
+                </div>
+                <div class="modal-footer">
+                    <button id="login" type="button" class="btn btn-primary" onclick="val();">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal fade" id="createmodal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create an account:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearCreate();">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input id="createnamefirst" type="text" class="form-control" placeholder="First name">
+                    </div>
+
+                    <br>
+
+                    <div class="input-group mb-3">
+                        <input id="createnamelast" type="text" class="form-control" placeholder="Last name">
+                    </div>
+
+                    <br>
 
 
 
+                    <div class="input-group mb-3">
+                        <input id="createemail" type="text" class="form-control" placeholder="Email Address">
+                    </div>
 
-</footer>
+                    <br>
+
+                    <div class="input-group mb-3">
+                        <input type="password" id="createpass" class="form-control" placeholder="Password">
+                    </div>
+
+                    <br>
+
+                    <div class="input-group mb-3">
+                        <input type="password" id="createpass2" class="form-control" placeholder="Re-enter password">
+                    </div>
+                    <h6 class="text-danger" id="passdontmatch"></h6>
+                    <h6 class="text-danger" id="fillout"></h6>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="createacc" type="button" class="btn btn-primary" onclick="SignUp();">Create account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer font-small bg-primary text-white pt-4 mt-4">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row">
+          <div class="col-md-6 mt-md-0 mt-3">
+            <h6>© 2018 BankAPP</h6>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 </body>
 
