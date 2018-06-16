@@ -12,20 +12,8 @@ $(function() {
     $('[data-toggle="popover"]').popover()
 })
 
-
-
 function validatedropdown() {
 
-    // This has no effect because the fields are empty.
-    // We need to determine what data will be going into the history
-    // I want: Timestamp request was submited, date loan was taken out, loan amount, location of transaction
-    firebase.database().ref('USERHIST/' + first).update({
-        DateLoaned: [],
-        // DatePaid: [],
-        // LoanFrom: [],
-        LoanAMT: [],
-        Notes: []
-    });
 }
 
 function signout() {
@@ -56,7 +44,6 @@ function createaccountopen() {
 function clearCreate() {
     document.getElementById("createnamefirst").value = "";
     document.getElementById("createnamelast").value = "";
-
     document.getElementById("createemail").value = "";
     document.getElementById("createpass").value = "";
     document.getElementById("createpass2").value = "";
@@ -64,72 +51,119 @@ function clearCreate() {
 
 function createUSER(first, last, email, password) {
 
-
-    firebase.database().ref('USERINFO/' + first).update({
+    firebase.database().ref('USERINFO/' + first).add({
         Email: email,
         First: first,
         Last: last,
         Password: password
     });
 
-    firebase.database().ref('USERDATA/' + first).update({
-
+    firebase.database().ref('USERDATA/' + first).add({
         CreditScore: "0",
         CurrentCredit: "0.00",
         CurrentDebt: "0.00"
-
     });
-    firebase.database().ref('USERHIST/' + first).update({
+
+    firebase.database().ref('USERHIST/' + first).add({
         DateLoaned: [""],
         DatePaid: [""],
         LoanFrom: [""],
         LoanAMT: [""],
         Notes: [""]
-
     });
-
-
-
-
 };
 
 function changeData(param) {
 
+<<<<<<< HEAD
 var user = param;
     var refrencecred = firebase.database().ref().child("USERDATA/" + user + "/CreditScore/");
 
     refrencecred.on("value", snap => {
+=======
+    var user = "Chandan";
+>>>>>>> c0eadf8e24e875947a116cb489b7f4294c8b8a2a
 
+    var referencecred = firebase.database().ref().child("USERDATA/" + user + "/CreditScore/");
+    referencecred.on("value", snap => {
         document.getElementById("currentCREDIT").innerHTML = snap.val();
-
     });
 
-    var refrencedebt = firebase.database().ref().child("USERDATA/" + user + "/CurrentDebt/");
-
-    refrencedebt.on("value", snap => {
-
-
+    var referencedebt = firebase.database().ref().child("USERDATA/" + user + "/CurrentDebt/");
+    referencedebt.on("value", snap => {
         document.getElementById("currentDEBT").innerHTML = "$" + snap.val();
     });
 
-
-    var refrencecredit = firebase.database().ref().child("USERDATA/" + user + "/CurrentCredit/");
-
-    refrencecredit.on("value", snap => {
-
-
-
+    var referencecredit = firebase.database().ref().child("USERDATA/" + user + "/CurrentCredit/");
+    referencecredit.on("value", snap => {
         document.getElementById("currentBAL").innerHTML = "$" + snap.val();
-
     });
 
+<<<<<<< HEAD
    document.getElementById("welcome").innerHTML = "Welcome, " + user
 
 
+=======
+    /*var user = "Chandan";
+>>>>>>> c0eadf8e24e875947a116cb489b7f4294c8b8a2a
 
 
 
 };
+<<<<<<< HEAD
+=======
+// CHANGE TABLE DATA
+// Tied to the "Dark" button
+function changeTable(user, num) {
+
+    var dateloaned = firebase.database().ref().child("USERHIST/" + user + "/DateLoaned/" + num + "/");
+    dateloaned.on("value", snap => {
+        if (snap.val() != null) {
+            document.getElementById(num + "-dl").innerHTML = snap.val();
+        } else {
+            return "-"
+        }
+    });
+
+    var datedue = firebase.database().ref().child("USERHIST/" + user + "/DateDue/" + num + "/");
+    datedue.on("value", snap => {
+        document.getElementById(num + "-dd").innerHTML = snap.val();
+    });
+
+    var datepaid = firebase.database().ref().child("USERHIST/" + user + "/DatePaid/" + num + "/");
+    datepaid.on("value", snap => {
+        document.getElementById(num + "-dp").innerHTML = snap.val();
+    });
+
+    var dayslate = firebase.database().ref().child("USERHIST/" + user + "/DaysLate/" + num + "/");
+    dayslate.on("value", snap => {
+        document.getElementById(num + "-dla").innerHTML = snap.val();
+    });
+
+    var loanamt = firebase.database().ref().child("USERHIST/" + user + "/LoanAMT/" + num + "/");
+    loanamt.on("value", snap => {
+        document.getElementById(num + "-ab").innerHTML = snap.val();
+    });
+
+    var amountpaid = firebase.database().ref().child("USERHIST/" + user + "/AmountPaid/" + num + "/");
+    amountpaid.on("value", snap => {
+        document.getElementById(num + "-ap").innerHTML = snap.val();
+    });
+
+    var notes = firebase.database().ref().child("USERHIST/" + user + "/Notes/" + num + "/");
+    notes.on("value", snap => {
+        document.getElementById(num + "-n").innerHTML = snap.val();
+    });
+}
+
+function changeTheData(max) {
+    changeData("Eagle");
+    for (var i = 0; i < max; i++) {
+        changeTable("Eagle", i+1);
+    }
+}
+
+>>>>>>> c0eadf8e24e875947a116cb489b7f4294c8b8a2a
 $(document).ready(function() {
     $(".close").click(function() {
         $("#sucsessfully").alert("close");
@@ -169,6 +203,7 @@ function clearLogin() {
 
 
 function val() {
+<<<<<<< HEAD
     var name = document.getElementById("username1").value;
     var password = document.getElementById("password").value;
     var refrencename = firebase.database().ref().child("USERINFO/" + name + "/First/");
@@ -176,8 +211,20 @@ function val() {
     refrencename.on("value", snap => {
       firename = snap.val();
 
+=======
+    var firename;
+    var firepass;
+
+    var name = document.getElementById("username1").value;
+    var password = document.getElementById("password").value;
+
+    var refrencename = firebase.database().ref().child("USERINFO/" + name + "/First/");
+    refrencename.on("value", snap => {
+      firename = refrencename.val();
+>>>>>>> c0eadf8e24e875947a116cb489b7f4294c8b8a2a
     });
     var refrencepass = firebase.database().ref().child("USERINFO/" + name + "/Password/");
+<<<<<<< HEAD
     var firepass = null;
     refrencepass.on("value", snap => {
       firepass = snap.val();
@@ -190,6 +237,12 @@ function val() {
 
                   clearLogin();
                   document.getElementById("wronglogin").innerHTML = "Incorrect name or password!"
+=======
+    refrencepass.on("value", snap => {
+      firepass = refrencepass.val();
+    });
+
+>>>>>>> c0eadf8e24e875947a116cb489b7f4294c8b8a2a
 
               }
           } else {
