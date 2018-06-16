@@ -95,7 +95,7 @@ function createUSER(first, last, email, password) {
 
 function changeData(param) {
 
-    var user = param;
+var user = param;
     var refrencecred = firebase.database().ref().child("USERDATA/" + user + "/CreditScore/");
 
     refrencecred.on("value", snap => {
@@ -123,29 +123,13 @@ function changeData(param) {
 
     });
 
+   document.getElementById("welcome").innerHTML = "Welcome, " + user
 
 
-    /*var user = "Chandan";
 
-    var database = firebase.database();
-    database.ref().once('child_added', function(snapshot){
 
-                var content;
-                content +="<tr>";
-                content += "<td>" + user.DateLoaned[0] + "</td>";
-                content += "<td>" + user.Paid+ "</td>";
-                content += "<td>" + user.DatePaid + "</td>";
-                content += "<td>" + user.LoanAMT+ "</td>";
-                content += "<td>" + user.LoanFrom + "</td>";
-                content += "<td>" + user.Notes + "</td>";
-                content += "</tr>";
 
-            $("#bodytable").append(content);
-            document.getElementById("currentBAL").innerHTML = user.totalDebt;
-            document.getElementById("currentDEBT").innerHTML = user.totalBalence;
-            document.getElementById("currentCREDIT").innerHTML = user.totalcred;*/
 };
-
 $(document).ready(function() {
     $(".close").click(function() {
         $("#sucsessfully").alert("close");
@@ -185,54 +169,34 @@ function clearLogin() {
 
 
 function val() {
-  var firename;
-  var firepass;
-
-
     var name = document.getElementById("username1").value;
     var password = document.getElementById("password").value;
-
-
-
-
     var refrencename = firebase.database().ref().child("USERINFO/" + name + "/First/");
-
+    var firename = null;
     refrencename.on("value", snap => {
       firename = snap.val();
 
-
     });
-
     var refrencepass = firebase.database().ref().child("USERINFO/" + name + "/Password/");
-
+    var firepass = null;
     refrencepass.on("value", snap => {
-
-
       firepass = snap.val();
+      if ((((firename && firepass) !== undefined && (firename && firepass) !== null)) && (name && password) !== "") {
+              if ((name == firename && password == firepass)) {
 
+                  location.assign("transHist.html");
+              changeData(name);
+              } else {
 
+                  clearLogin();
+                  document.getElementById("wronglogin").innerHTML = "Incorrect name or password!"
+
+              }
+          } else {
+              clearLogin();
+              document.getElementById("wronglogin").innerHTML = "Incorrect name or password!"
+
+          }
     });
 
-
-
-  if ((((firename && firepass) !== undefined && (firename && firepass) !== null)) && (name && password) !== "") {
-        if ((name == firename && password == firepass)) {
-            location.assign("transHist.html")
-            changeData(firename);
-
-        } else {
-
-            clearLogin();
-            document.getElementById("wronglogin").innerHTML = "Incorrect name or password!"
-            console.log("1")
-            console.log(firename)
-            console.log(firepass)
-        }
-    } else {
-        clearLogin();
-        document.getElementById("wronglogin").innerHTML = "Incorrect name or password!"
-        console.log("2")
-        console.log(firename)
-        console.log(firepass)
-    }
 }

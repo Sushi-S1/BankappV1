@@ -51,17 +51,17 @@
 	"Eagle": {
 		"CurrentDebt" : "5.00",
     	"CurrentCredit": "14.00",
-    	"CreditScore": "0"
+    	"CreditScore": "350"
 		},
 	"Chandan": {
 		"CurrentDebt" : "5.00",
-    	"CurrentCredit": "0.00",
-    	"CreditScore": "0"
+    	"CurrentCredit": "4.00",
+    	"CreditScore": "232"
 		},
 	"Pratham": {
-		"CurrentDebt" : "0.00",
-    	"CurrentCredit": "0.00",
-    	"CreditScore": "0"
+		"CurrentDebt" : "7.00",
+    	"CurrentCredit": "8.00",
+    	"CreditScore": "433"
 		}
 	}
 
