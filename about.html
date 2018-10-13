@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-database.js"></script>
 
 <head>
   <meta charset="utf-8">
@@ -112,55 +108,6 @@
                 </div>
                 <div class="modal-footer">
                     <button id="login" type="button" class="btn btn-primary" onclick="val();">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal modal fade" id="createmodal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Create an account:</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearCreate();">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <input id="createnamefirst" type="text" class="form-control" placeholder="First name">
-                    </div>
-
-                    <br>
-
-                    <div class="input-group mb-3">
-                        <input id="createnamelast" type="text" class="form-control" placeholder="Last name">
-                    </div>
-
-                    <br>
-
-
-
-                    <div class="input-group mb-3">
-                        <input id="createemail" type="text" class="form-control" placeholder="Email Address">
-                    </div>
-
-                    <br>
-
-                    <div class="input-group mb-3">
-                        <input type="password" id="createpass" class="form-control" placeholder="Password">
-                    </div>
-
-                    <br>
-
-                    <div class="input-group mb-3">
-                        <input type="password" id="createpass2" class="form-control" placeholder="Re-enter password">
-                    </div>
-                    <h6 class="text-danger" id="passdontmatch"></h6>
-                    <h6 class="text-danger" id="fillout"></h6>
-                </div>
-
-                <div class="modal-footer">
-                    <button id="createacc" type="button" class="btn btn-primary" onclick="SignUp();">Create account</button>
                 </div>
             </div>
         </div>
